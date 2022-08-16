@@ -1,0 +1,17 @@
+{
+    "name": "kacper/php-mvc",
+    "description": "My first MVC project!",
+    "type": "framework",
+    "autoload": {
+        "psr-4": {
+            "App\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kacper Górec",
+            "email": "kacpergorec@gmail.com"
+        }
+    ],
+    "require": {}
+}
