@@ -56,10 +56,10 @@
         </a>
         <div class="hidden md:contents">
             <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-                <a class="mr-5 hover:text-primary-400" href="#">Home</a>
+                <a class="mr-5 hover:text-primary-400" href="/">Home</a>
                 <a class="mr-5 hover:text-primary-400" href="#">Documentation</a>
                 <a class="mr-5 hover:text-primary-400" href="#">Pricing</a>
-                <a class="mr-5 hover:text-primary-400" href="#">Contact</a>
+                <a class="mr-5 hover:text-primary-400" href="contact">Contact</a>
             </nav>
             <a href="#"
                class="dark:hover:bg-primary-600 inline-flex dark:bg-primary-700 dark:text-primary-200 items-center bg-primary-200 text-primary-800 border-0 py-1 px-3 focus:outline-none hover:bg-primary-300 rounded text-base mt-4 md:mt-0">

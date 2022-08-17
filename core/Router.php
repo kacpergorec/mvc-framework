@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Core;
 
 class Router
@@ -41,13 +42,17 @@ class Router
             return $this->renderView($callback);
         }
 
-        return call_user_func($callback);
+        if (is_array($callback)) {
+            $callback[0] = new $callback[0]();
+        }
+
+        return $callback($this->request);
     }
 
-    public function renderView($view)
+    public function renderView($view, $params = [])
     {
         $layoutContent = $this->layoutContent('main');
-        $viewContent = $this->renderOnlyView($view);
+        $viewContent = $this->renderOnlyView($view, $params);
 
         return str_replace('{{content}}', $viewContent, $layoutContent);
     }
@@ -61,15 +66,23 @@ class Router
 
     protected function layoutContent($layout)
     {
-        ob_start();
-        include_once Application::$ROOT_DIR . "/src/View/layouts/$layout.php";
-        return ob_get_clean();
+        return $this->bufferView("layouts/$layout");
     }
 
-    protected function renderOnlyView($view)
+    protected function renderOnlyView($view, $params = [])
     {
+        return $this->bufferView($view, $params);
+    }
+
+    protected function bufferView($viewPath, $params = [])
+    {
+        //Pass the parameters to the view
+        foreach ($params as $key => $value) {
+            $$key = $value;
+        }
+        //Buffer the view file
         ob_start();
-        include_once Application::$ROOT_DIR . "/src/View/$view.php";
+        include_once Application::$ROOT_DIR . "/src/View/$viewPath.php";
         return ob_get_clean();
     }
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Controller\SiteController;
 use App\Core\Application;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -7,8 +8,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 $app = new Application();
 
-$app->router->get('/', 'home');
-$app->router->get('/contact', 'contact');
-$app->router->post('/contact', []);
+
+$app->router->get('/', [SiteController::class, 'home']);
+$app->router->get('/contact', [SiteController::class, 'contact']);
+$app->router->post('/contact', [SiteController::class, 'handleContact']);
 
 $app->run();
