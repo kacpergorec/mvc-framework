@@ -28,7 +28,7 @@ class Router
     public function resolve()
     {
         $path = $this->request->getPath();
-        $method = $this->request->getMethod();
+        $method = $this->request->method();
 
 
         $callback = $this->routes[$method][$path] ?? false;
@@ -43,7 +43,8 @@ class Router
         }
 
         if (is_array($callback)) {
-            $callback[0] = new $callback[0]();
+            Application::$app->controller = new $callback[0]();
+            $callback[0] = Application::$app->controller;
         }
 
         return $callback($this->request);
@@ -51,7 +52,9 @@ class Router
 
     public function renderView($view, $params = [])
     {
-        $layoutContent = $this->layoutContent('main');
+        $layout = Application::$app->controller->layout;
+
+        $layoutContent = $this->layoutContent($layout);
         $viewContent = $this->renderOnlyView($view, $params);
 
         return str_replace('{{content}}', $viewContent, $layoutContent);
@@ -59,7 +62,9 @@ class Router
 
     public function renderContent($viewContent)
     {
-        $layoutContent = $this->layoutContent('main');
+        $layout = Application::$app->controller->layout;
+
+        $layoutContent = $this->layoutContent($layout);
 
         return str_replace('{{content}}', $viewContent, $layoutContent);
     }
@@ -71,15 +76,18 @@ class Router
 
     protected function renderOnlyView($view, $params = [])
     {
+
         return $this->bufferView($view, $params);
     }
 
     protected function bufferView($viewPath, $params = [])
     {
+
         //Pass the parameters to the view
         foreach ($params as $key => $value) {
             $$key = $value;
         }
+
         //Buffer the view file
         ob_start();
         include_once Application::$ROOT_DIR . "/src/View/$viewPath.php";
