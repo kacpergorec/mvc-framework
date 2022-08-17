@@ -1,3 +1,4 @@
+<?php  ?>
 <section class="text-gray-600 dark:text-gray-100 body-font relative">
     <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-col text-center w-full mb-12">

@@ -1,3 +1,4 @@
+<?php  ?>
 <!doctype html>
 <html lang="en" class="dark">
 <head>
