@@ -34,15 +34,18 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="docs">Docs</a>
+                        <a class="nav-link" href="docs">Documentation</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="pricing">Pricing</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact">Contact</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav align-items-center mt-4 mt-md-0">
                     <li class="nav-item me-md-2">
-                        <a href="login" class="text-white btn btn-dark py-1">Sign in</a>
+                        <a href="login" class="text-white btn btn-gray py-1">Sign in</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="register">Register</a>
