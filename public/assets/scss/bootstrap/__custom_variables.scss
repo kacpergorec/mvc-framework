@@ -1,0 +1,74 @@
+//
+//   THEME COLORS
+//
+
+$primary:       hsl(346, 84%, 60%) !default;
+$secondary:     hsl(205, 94%, 50%) !default;
+
+$success:   #11db98 !default;
+$info:      #55c6ff !default;
+$warning:   #ff8635 !default;
+$danger:    #f84040 !default;
+$light:     #FAFAF9 !default;
+$dark:      #1C1917 !default;
+
+
+//
+//   THEME VARIABLES
+//
+
+$body-bg:       $dark;
+$body-color:    $light;
+
+$font-family-base: "Inter", sans-serif;
+
+$input-btn-focus-width:         1px !default;
+$input-btn-focus-color-opacity: .05 !default;
+
+$input-bg:                              lighten($body-bg,6%) !default;
+$input-color:                           $body-color !default;
+$input-border-width:                    0px !default;
+
+$input-focus-bg:                        lighten($input-bg,9%) !default;
+
+:-webkit-autofill, :autofill {
+ background-color: $input-bg !important;
+}
+
+// FONT WEIGHTS
+$font-weight-lighter:         100 !default;
+$font-weight-light:           200 !default;
+$font-weight-normal:          300 !default;
+$font-weight-semibold:        600 !default;
+$font-weight-bold:            800 !default;
+$font-weight-bolder:          900 !default;
+
+$headings-font-weight:        $font-weight-bold !default;
+
+// BORDER RADIUS
+$border-radius:               .375rem !default;
+$border-radius-sm:            .25rem !default;
+$border-radius-lg:            .5rem !default;
+$border-radius-xl:            1rem !default;
+$border-radius-2xl:           2rem !default;
+$border-radius-pill:          50rem !default;
+
+// SPACINGS
+$spacer: 1rem !default;
+$spacers: (
+        0: 0,
+        1: $spacer * .25,
+        2: $spacer * .5,
+        3: $spacer,
+        4: $spacer * 1.5,
+        5: $spacer * 3,
+        6: $spacer * 3.5,
+        7: $spacer * 4,
+        8: $spacer * 4.5,
+        9: $spacer * 5,
+        10: $spacer * 5.5,
+        11: $spacer * 6,
+        12: $spacer * 6.5,
+        13: $spacer * 7,
+        14: $spacer * 7.5,
+) !default;

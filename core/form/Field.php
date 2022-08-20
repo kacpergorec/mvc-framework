@@ -30,22 +30,19 @@ class Field
     public function __toString()
     {
         return sprintf('
-        <div class="p-2 w-full relative">
-              <label for="%s" class="leading-7 text-sm">%s</label>
-              <input type="%s" id="%s" name="%s" value="%s"
-                     class="dark:text-gray-200 w-full bg-gray-100 dark:bg-stone-800 bg-opacity-50 rounded border border-gray-300 dark:border-stone-700 focus:ring-1 ring-primary-500 dark:focus:bg-stone-700 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-              <div class="text-rose-600">
-                    %s
-              </div>
+        <div class="form-group mt-4 w-100">
+            <label class="small w-100 text-center" for="%s">%s</label>
+            <input type="%s" id="%s" name="%s" value="%s" class="form-control%s">
+            <small class="form-text text-danger"> %s</small>
         </div>
         ',
-            $this->attribute, //for
-            $this->attribute, //label text
-            $this->type, //type
-            $this->attribute, //id
-            $this->attribute, //name
+            $this->attribute, // For=
+            $this->attribute, // Label text
+            $this->type, // Type=
+            $this->attribute, // Id=
+            $this->attribute, // Name=
             $this->model->{$this->attribute}, // value
-//            $this->model->hasError($this->attribute) ? 'is-invalid' : '', //extra class
+            $this->model->hasError($this->attribute) ? ' is-invalid' : '', //extra class
             $this->model->getFirstError($this->attribute) //error-text
         );
     }

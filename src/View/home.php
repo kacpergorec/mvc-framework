@@ -1,3 +1,3 @@
 <?php  ?>
 <h1>Home</h1>
-<h3>Welcome <?= $name ?></h3>
+<p class="fs-3">Welcome, <?= $name ?>.</p>
