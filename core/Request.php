@@ -7,7 +7,11 @@ namespace App\Core;
 class Request
 {
 
-    //Returns URI path, filters get parameters out
+    /**
+     * Returns URI path, filters get parameters out
+     *
+     * @return false|mixed|string
+     */
     public function getPath()
     {
         $path = $_SERVER['REQUEST_URI'] ?? '/';
@@ -21,34 +25,34 @@ class Request
         return substr($path, 0, $position);
     }
 
-    public function method()
+    public function method(): string
     {
         return strtolower($_SERVER['REQUEST_METHOD']);
     }
 
-    public function isPost()
+    public function isPost(): bool
     {
         return $this->method() === 'post';
     }
 
-    public function isGet()
+    public function isGet(): bool
     {
         return $this->method() === 'get';
     }
 
-    public function getBody()
+    public function getBody(): array
     {
         $body = [];
 
         //TODO: Input sanitize interface
 
-        if ($this->method() === 'get') {
+        if ($this->isGet()) {
             foreach ($_GET as $key => $item) {
                 $body[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_SPECIAL_CHARS);
             }
         }
 
-        if ($this->method() === 'post') {
+        if ($this->isPost()) {
             foreach ($_POST as $key => $item) {
                 $body[$key] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_SPECIAL_CHARS);
             }

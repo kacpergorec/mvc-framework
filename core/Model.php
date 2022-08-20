@@ -13,7 +13,13 @@ abstract class Model
     public const RULE_MAX = 'max';
     public const RULE_MATCH = 'match';
 
-    public function loadData($data)
+
+    /**
+     * Assigns request data [POST,GET] to the current class instance
+     *
+     * @param mixed $data Data from Request()
+     */
+    public function loadData($data): void
     {
         foreach ($data as $key => $value) {
             if (property_exists($this, $key)) {
@@ -26,9 +32,13 @@ abstract class Model
 
     public array $errors = [];
 
-    public function validate()
+    /**
+     * Validates the given parameters using rules declared in the child class
+     *
+     * @return bool
+     */
+    public function validate(): bool
     {
-
 
         foreach ($this->rules() as $attribute => $rules) {
             $value = $this->{$attribute};
@@ -64,10 +74,11 @@ abstract class Model
         return empty($this->errors);
     }
 
-    public function addError(string $attribute, string $rule, $params = [])
+    public function addError(string $attribute, string $rule, $params = []): void
     {
         $message = $this->errorMessages()[$rule] ?? '';
 
+        //insert params into corresponding placeholders
         foreach ($params as $key => $value) {
             $message = str_replace("{{$key}}", $value, $message);
         }
@@ -75,7 +86,7 @@ abstract class Model
         $this->errors[$attribute][] = $message;
     }
 
-    public function errorMessages()
+    public function errorMessages(): array
     {
         return [
             self::RULE_REQUIRED => 'This field is required.',

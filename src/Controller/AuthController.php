@@ -13,7 +13,6 @@ class AuthController extends Controller
 
     public function login()
     {
-//        $this->setLayout('auth');
         return $this->view('login');
     }
 
@@ -25,18 +24,11 @@ class AuthController extends Controller
 
             $registerModel->loadData($request->getBody());
 
-
-
             if ($registerModel->validate() && $registerModel->register()) {
                 return "Success";
             }
 
-            return $this->view('register', [
-                'model' => $registerModel,
-            ]);
         }
-
-//        $this->setLayout('auth');
 
         return $this->view('register', [
             'model' => $registerModel,

@@ -25,15 +25,20 @@ class Router
         $this->routes['post'][$path] = $callback;
     }
 
+    /**
+     * Route resolving method, further explanation in the comments inside
+     *
+     * @return array|false|string|string[]
+     */
     public function resolve()
     {
         $path = $this->request->getPath();
         $method = $this->request->method();
 
         //Finds a existing route by the path and method.
-        //If no route is found it is set to false.
         $callback = $this->routes[$method][$path] ?? false;
 
+        //When route is not found render _404
         if ($callback === false) {
             $this->response->setStatusCode(404);
             return $this->renderView('_404');
@@ -63,7 +68,6 @@ class Router
         $layoutContent = $this->layoutContent($layout);
         $viewContent = $this->renderOnlyView($view, $params);
 
-        //Primitive layouting
         return str_replace('{{content}}', $viewContent, $layoutContent);
     }
 

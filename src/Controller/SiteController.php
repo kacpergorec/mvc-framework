@@ -17,17 +17,5 @@ class SiteController extends Controller
 
         return $this->view('home', $params);
     }
-
-    public function contact()
-    {
-        return $this->view('contact');
-    }
-
-    public function handleContact(Request $request)
-    {
-       $body = $request->getBody();
-
-       var_dump($body);
-    }
 }
 
