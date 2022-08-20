@@ -27,9 +27,11 @@ $input-btn-focus-color-opacity: .05 !default;
 
 $input-bg:                              lighten($body-bg,6%) !default;
 $input-color:                           $body-color !default;
-$input-border-width:                    0px !default;
-
+$input-border-width:                    1px !default;
+$input-border-color:                    lighten($body-bg,15%)!default;
 $input-focus-bg:                        lighten($input-bg,9%) !default;
+$input-focus-border-color:              $primary !default;
+
 
 :-webkit-autofill, :autofill {
  background-color: $input-bg !important;

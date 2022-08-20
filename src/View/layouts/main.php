@@ -42,7 +42,7 @@
                 </ul>
                 <ul class="navbar-nav align-items-center mt-4 mt-md-0">
                     <li class="nav-item me-md-2">
-                        <a href="login" class="text-white btn btn-outline-primary py-1">Sign in</a>
+                        <a href="login" class="text-white btn btn-dark py-1">Sign in</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="register">Register</a>

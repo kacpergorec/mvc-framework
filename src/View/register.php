@@ -7,10 +7,10 @@ use App\Model\RegisterModel;
  * @var RegisterModel $model ;
  */
 ?>
-<section class="col-md-4 mx-auto p-2">
+<section class="col-md-5 mx-auto p-2">
     <div class="text-center">
-        <h1>Register</h1>
-        <p class="py-4">
+        <h1 class="fw-semibold fs-2">Register</h1>
+        <p class="py-2">
             Already have an account?
             <a href="login" class="text-primary text-decoration-none">Click here </a>
             to login.

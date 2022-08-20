@@ -30,8 +30,8 @@ class Field
     public function __toString()
     {
         return sprintf('
-        <div class="form-group mt-4 w-100">
-            <label class="small w-100 text-center" for="%s">%s</label>
+        <div class="form-group mt-3 w-100">
+            <label class="mb-2" for="%s">%s</label>
             <input type="%s" id="%s" name="%s" value="%s" class="form-control%s">
             <small class="form-text text-danger"> %s</small>
         </div>
