@@ -1,4 +1,4 @@
-# mvc-framework
+# MVC Framework
 
 > This project is under development. 
 > Download at your own risk :]
