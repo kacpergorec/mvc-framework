@@ -33,6 +33,9 @@ $app->router->get('/register', [AuthController::class, 'register']);
 $app->router->post('/register', [AuthController::class, 'register']);
 
 
+var_dump($app->router->getRoutes());
+
+
 //
 // End Routes
 //
