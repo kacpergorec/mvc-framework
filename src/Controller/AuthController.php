@@ -25,7 +25,7 @@ class AuthController extends Controller
 
             $user->loadData($request->getBody());
 
-            if ($user->validate() && $user->save()) { .
+            if ($user->validate() && $user->save()) {
                 Application::$app->response->redirect('/');
             }
 
