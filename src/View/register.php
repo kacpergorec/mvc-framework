@@ -1,10 +1,10 @@
 <?php
 
 use App\Core\Form\Form;
-use App\Model\RegisterModel;
+use App\Model\User;
 
 /**
- * @var RegisterModel $model ;
+ * @var User $model ;
  */
 ?>
 <section class="col-md-4 mx-auto p-2">
@@ -20,7 +20,7 @@ use App\Model\RegisterModel;
     <?php $form = Form::begin('', 'post') ?>
 
     <div class="d-flex flex-wrap justify-content-center">
-        <?= $form->field($model, 'nickname') ?>
+        <?= $form->field($model, 'username') ?>
         <?= $form->field($model, 'email') ?>
         <?= $form->field($model, 'password')->passwordField() ?>
         <?= $form->field($model, 'confirmPassword')->passwordField() ?>

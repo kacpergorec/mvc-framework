@@ -2,5 +2,3 @@ vendor
 .idea
 .env
 .phpunit.result.cach
-
-e

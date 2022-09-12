@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Warning":6,"Tests\\Unit\\RouterTest::itRegistersARoute":3,"Tests\\Unit\\RouterTest::itRegistersAPostRoute":3},"times":{"Warning":0.007,"Tests\\Unit\\RouterTest::itRegistersARoute":0.008,"Tests\\Unit\\RouterTest::itRegistersAPostRoute":0,"Tests\\Unit\\RouterTest::itRegistersAGetRoute":0.008}}

@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://<?= $_SERVER['HTTP_HOST'] ?>/assets/css/main.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <title>MVC Framework 1.0</title>
 </head>
 <body>
@@ -16,8 +15,6 @@
 
             <!-- BRAND LOGO -->
             <a class="navbar-brand" href="/">
-                <img src="http://<?= $_SERVER['HTTP_HOST'] ?>/assets/images/logo.svg" alt="Brand Logo"
-                     class="bg-primary p-2 rounded-circle">
                 <span class="p-2"><small class="fw-bold fs-6">MVC</small>Framework</span>
             </a>
 
@@ -61,6 +58,6 @@
     {{content}}
 </main>
 
-<script src="http://<?= $_SERVER['HTTP_HOST'] ?>/assets/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>
