@@ -34,7 +34,7 @@ class User extends DbModel
                 'class' => self::class,
                 'attribute' => 'email'
             ]],
-            'username' => [self::RULE_REQUIRED, [self::RULE_MAX, 'max' => '35'],[
+            'username' => [self::RULE_REQUIRED, [self::RULE_MAX, 'max' => '35'], [
                 self::RULE_UNIQUE,
                 'class' => self::class,
                 'attribute' => 'username'
@@ -43,6 +43,16 @@ class User extends DbModel
             'confirmPassword' => [self::RULE_REQUIRED, [self::RULE_MATCH, 'match' => 'password']],
         ];
 
+    }
+
+    public function labels(): array
+    {
+        return [
+            'username' => 'Username',
+            'email' => 'E-mail address',
+            'password' => 'Password',
+            'confirmPassword' => 'Confirm password',
+            ];
     }
 
     function tableName(): string

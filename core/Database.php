@@ -78,7 +78,8 @@ class Database
         return new $className();
     }
 
-    public function prepare($sql){
+    public function prepare($sql)
+    {
         return $this->pdo->prepare($sql);
     }
 

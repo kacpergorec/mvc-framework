@@ -67,6 +67,7 @@ abstract class Model
                 }
 
                 if ($ruleName === self::RULE_MATCH && $value !== $this->{$rule['match']}) {
+                    $rule['match'] = $this->getLabel($rule['match']);
                     $this->addError($attribute, self::RULE_MATCH, $rule);
                 }
 
@@ -82,7 +83,7 @@ abstract class Model
                     $record = $statement->fetchObject();
 
                     if ($record) {
-                        $this->addError($attribute, self::RULE_UNIQUE, ['field' => $attribute]);
+                        $this->addError($attribute, self::RULE_UNIQUE, ['field' => $this->getLabel($attribute)]);
                     }
                 }
             }
@@ -97,10 +98,20 @@ abstract class Model
 
         //insert params into corresponding placeholders
         foreach ($params as $key => $value) {
-            $message = str_replace("{{$key}}", $value, $message);
+            $message = str_replace("{{$key}}", mb_strtolower($value), $message);
         }
 
         $this->errors[$attribute][] = $message;
+    }
+
+    public function getLabel($attribute)
+    {
+        return $this->labels()[$attribute] ?? $attribute;
+    }
+
+    public function labels(): array
+    {
+        return [];
     }
 
     public function errorMessages(): array

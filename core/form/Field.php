@@ -37,7 +37,7 @@ class Field
         </div>
         ',
             $this->attribute, // For=
-            $this->attribute, // Label text
+            $this->model->getLabel($this->attribute), // Label text
             $this->type, // Type=
             $this->attribute, // Id=
             $this->attribute, // Name=

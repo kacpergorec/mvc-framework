@@ -28,6 +28,11 @@ abstract class DbModel extends Model
         return true;
     }
 
+    public function labels(): array
+    {
+        return  [];
+    }
+
 
     public static function prepare($sql)
     {
